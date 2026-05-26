@@ -1,0 +1,49 @@
+{
+  "entities": {
+    "Prediction": {
+      "title": "Prediction",
+      "description": "A saved match prediction",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "match": {
+          "type": "object",
+          "properties": {
+            "teamA": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "logo": { "type": "string" },
+                "shortName": { "type": "string" }
+              }
+            },
+            "teamB": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "logo": { "type": "string" },
+                "shortName": { "type": "string" }
+              }
+            },
+            "league": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" }
+              }
+            }
+          }
+        },
+        "prediction": { "type": "object" },
+        "stats": { "type": "object" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "match", "prediction", "stats", "createdAt"]
+    }
+  },
+  "firestore": {
+    "predictions": {
+      "schema": "Prediction",
+      "description": "Collection of saved predictions"
+    }
+  }
+}

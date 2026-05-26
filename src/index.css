@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-brand-primary: #10b981; /* Emerald 500 */
+  --color-brand-secondary: #f59e0b; /* Amber 500 */
+  --color-brand-accent: #3b82f6; /* Blue 500 */
+  
+  --color-bg-deep: #020617; /* Slate 950 */
+  --color-bg-card: #0f172a; /* Slate 900 */
+  --color-bg-muted: #1e293b; /* Slate 800 */
+}
+
+@layer base {
+  body {
+    @apply bg-bg-deep text-slate-100 font-sans antialiased;
+  }
+}
+
+.glass-morphism {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.prediction-card-hover {
+  @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-primary/10;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
